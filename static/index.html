@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#5bc0eb">
+  <title>Ciència a la URV</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="img/icona.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-urv.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fons: la ciutat animada -->
+  <div id="ciutat" aria-hidden="true">
+    <div class="cel"></div>
+    <div class="sol"></div>
+    <div class="capa-nuvols"></div>
+    <div class="capa-ocells"></div>
+    <div class="globus"></div>
+    <svg class="skyline llunya" preserveAspectRatio="none"></svg>
+    <svg class="skyline a-prop" preserveAspectRatio="none"></svg>
+    <div class="carrer">
+      <div class="vorera"></div>
+      <div class="calcada"></div>
+      <div class="capa-terrasses"></div>
+      <div class="capa-mobils"></div>
+    </div>
+  </div>
+
+  <!-- Pantalla principal -->
+  <div id="app">
+    <header class="capcalera">
+      <div class="logo"><img src="img/logo-urv.png" alt="Universitat Rovira i Virgili"></div>
+      <div class="titols">
+        <h1 id="titol">Ciència a la URV</h1>
+        <p id="subtitol"></p>
+      </div>
+      <div class="controls">
+        <div class="marcador" id="marcador">0 / 0</div>
+      </div>
+    </header>
+    <main id="graella" class="graella">
+      <!-- Es mou al final de la graella (l'espai lliure de baix a la dreta) -->
+      <div class="cel-reiniciar" id="cel-reiniciar">
+        <button class="boto-petit" id="boto-reiniciar">↺ Reiniciar</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Vista de pregunta -->
+  <section id="vista-pregunta" class="vista-pregunta" hidden>
+    <div class="panell" id="panell">
+      <div class="panell-cap">
+        <span class="xip-numero" id="p-numero"></span>
+        <span class="xip-tema" id="p-tema"></span>
+      </div>
+      <div class="temps" id="p-temps" hidden>
+        <div class="temps-pista"><div class="temps-barra" id="p-temps-barra"></div></div>
+        <span class="temps-num" id="p-temps-num"></span>
+      </div>
+      <h2 class="enunciat" id="p-enunciat"></h2>
+      <div class="respostes" id="p-respostes"></div>
+      <div class="explicacio" id="p-explicacio" hidden>
+        <div class="veredicte" id="p-veredicte"></div>
+        <p class="ho-sabies">Ho sabies?</p>
+        <p class="text-explicacio" id="p-text-explicacio"></p>
+        <button class="boto-gran" id="boto-tornar">Tornar a la ciutat →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pop-up de confirmació de reinici -->
+  <div class="modal" id="modal-reiniciar" hidden>
+    <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="mr-titol">
+      <div class="modal-icona">↺</div>
+      <h3 id="mr-titol">Reiniciar el joc</h3>
+      <p>Estàs segur? Si reinicies, es perd tot el progrés.</p>
+      <div class="modal-botons">
+        <button class="boto-gran secundari" id="mr-no">Cancel·la</button>
+        <button class="boto-gran perill" id="mr-si">Sí, reinicia</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final: totes jugades -->
+  <div class="modal" id="modal-final" hidden>
+    <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="mf-titol">
+      <div class="modal-icona festa">🎉</div>
+      <h3 id="mf-titol">Has recorregut tota la ciutat!</h3>
+      <p id="mf-text"></p>
+      <div class="modal-botons">
+        <button class="boto-gran" id="mf-ok">D'acord</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pantalla d'inici (activa la pantalla completa) -->
+  <div class="inici" id="inici">
+    <div class="inici-caixa">
+      <img src="img/logo-urv.png" alt="Universitat Rovira i Virgili" class="inici-logo">
+      <h1 id="inici-titol">Ciència a la URV</h1>
+      <p class="inici-sub" id="inici-sub"></p>
+      <div class="inici-text" id="inici-text"></div>
+      <div class="inici-toca">Toca per començar</div>
+    </div>
+  </div>
+
+  <div id="error" class="error" hidden></div>
+  <div id="confeti" aria-hidden="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

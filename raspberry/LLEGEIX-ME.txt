@@ -1,0 +1,125 @@
+CIÈNCIA A LA URV — Instal·lació a la Raspberry Pi
+==================================================
+
+Aquest paquet converteix una Raspberry Pi en un quiosc per al joc de preguntes
+«Ciència a la URV». Quan s'engega la Raspberry Pi, el joc s'obre sol a pantalla
+completa al monitor. No cal connexió a internet per jugar.
+
+
+QUÈ CAL
+-------
+- Raspberry Pi 4 o 5 (recomanat; una Pi 3 també funciona, però més lenta).
+- Targeta microSD amb «Raspberry Pi OS with desktop» (la versió de 64 bits que
+  proposa Raspberry Pi Imager). NO serveix la versió «Lite» (no té escriptori).
+- Monitor connectat per HDMI. Si és tàctil, connecteu-ne també el cable USB.
+- Per a la instal·lació: teclat i ratolí.
+- Internet només fa falta si la Raspberry Pi no té Chromium instal·lat (el
+  Raspberry Pi OS amb escriptori ja el porta).
+
+
+INSTAL·LACIÓ (uns 5 minuts)
+---------------------------
+1. Engegueu la Raspberry Pi amb el monitor connectat i acabeu la configuració
+   inicial del sistema si és la primera vegada (idioma, usuari, contrasenya...).
+
+2. Copieu el fitxer «ciencia-urv-raspberry.zip» a la Raspberry Pi (per exemple,
+   amb un llapis USB) i deixeu-lo a la carpeta personal.
+
+3. Obriu un terminal (icona de la pantalla negra a la barra de dalt, o
+   Ctrl+Alt+T) i escriviu aquestes ordres, una a una, prement Retorn:
+
+       cd ~
+       unzip ciencia-urv-raspberry.zip
+       cd ciencia-urv-raspberry
+       bash instala.sh
+
+   (Si el zip és en un altre lloc, per exemple al llapis USB, canvieu el «cd ~»
+   per la carpeta corresponent, o primer moveu-hi el zip.)
+
+4. Si demana la contrasenya, és la de l'usuari de la Raspberry Pi.
+
+5. Al final pregunta si voleu reiniciar: premeu Retorn. En tornar a engegar-se,
+   el joc apareixerà sol a pantalla completa.
+
+La carpeta descomprimida «ciencia-urv-raspberry» es pot esborrar després: el
+joc queda instal·lat a ~/ciencia-urv.
+
+
+ÚS DIARI
+--------
+- Engegar:  endolleu la Raspberry Pi. En un minut, aproximadament, surt el joc.
+- Apagar:   el més segur és apagar-la des del menú (Logout → Shutdown) o, amb
+            teclat, sortint del quiosc (vegeu a sota) i escrivint al terminal
+            «sudo poweroff». Desendollar-la directament no sol fer perdre la
+            partida, però pot fer malbé la targeta microSD a la llarga.
+- La partida (quines preguntes s'han jugat) es conserva encara que s'apagui.
+- Reiniciar la partida: dins del joc, botó «↺ Reiniciar» → «Sí, reinicia».
+
+
+TECLES (cal un teclat connectat)
+--------------------------------
+- Alt+F4 ............ tanca el navegador; es torna a obrir sol al cap d'uns
+                      segons.
+- Alt+F4 dues vegades seguides ... surt del quiosc del tot i deixa veure
+                      l'escriptori (la segona vegada, abans de 20 segons).
+- F5 ................ recarrega la pàgina.
+- Per tornar a obrir el joc: menú → Jocs → Ciència a la URV, o reinicieu.
+
+
+EXTREURE LA TELEMETRIA (estadístiques d'ús)
+-------------------------------------------
+El joc registra les respostes (sense cap dada personal). Per copiar-les:
+1. Connecteu un llapis USB.
+2. Sortiu del quiosc (Alt+F4 dues vegades) i obriu un terminal.
+3. Escriviu:   ~/ciencia-urv/exporta-telemetria.sh
+
+Es crea una carpeta «ciencia-urv-telemetria-DATA» al llapis USB amb les dades,
+un resum (resum.txt) i un fitxer CSV per obrir amb Excel. Si no hi ha cap llapis
+connectat, la carpeta es crea a la carpeta personal.
+
+
+PROBLEMES FREQÜENTS
+-------------------
+- Pantalla en blanc o «No es pot accedir al lloc»: el servidor no funciona.
+  Al terminal:
+      systemctl status ciencia-urv          (ha de dir «active (running)»)
+      journalctl -u ciencia-urv -n 50       (missatges d'error)
+      sudo systemctl restart ciencia-urv    (reiniciar-lo)
+  I després premeu F5 al joc.
+
+- La pantalla s'apaga sola al cap d'una estona: executeu
+  «sudo raspi-config», aneu a Display Options → Screen Blanking → No, i reinicieu.
+
+- La imatge surt girada, retallada o amb una resolució incorrecta: sortiu del
+  quiosc i obriu menú → Preferències → Screen Configuration. Per a un monitor
+  vertical, feu clic dret sobre la pantalla → Orientation.
+
+- El monitor tàctil no respon bé o el tàctil no coincideix amb la imatge: a
+  Screen Configuration, clic dret sobre la pantalla → Touchscreen, i trieu-lo.
+
+- No surt el joc en engegar: comproveu que s'entra a l'escriptori sense
+  demanar contrasenya (sudo raspi-config → System Options → Boot / Auto Login
+  → Desktop Autologin). Mentrestant, es pot obrir des del menú → Jocs.
+
+
+CANVIAR LES PREGUNTES O EL TEXT
+-------------------------------
+- Preguntes:     ~/ciencia-urv/data/preguntes.json
+- Configuració:  ~/ciencia-urv/config.json  (títol, temps per respondre, temps
+                 d'inactivitat, text de benvinguda...)
+Després de desar els canvis, premeu F5 al joc. Si el fitxer de preguntes té un
+error, el joc no carregarà; el missatge d'error es veu amb
+«journalctl -u ciencia-urv -n 50».
+
+
+ACTUALITZAR A UNA VERSIÓ NOVA
+-----------------------------
+Descomprimiu el zip nou i torneu a executar «bash instala.sh». Es conserven la
+partida en curs i la telemetria.
+
+
+DESINSTAL·LAR
+-------------
+    ~/ciencia-urv/desinstala.sh
+
+Treu l'obertura automàtica i el servei, però no esborra les dades.

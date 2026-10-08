@@ -1,0 +1,401 @@
+[
+  {
+    "id": 1,
+    "tema": "Què en saps sobre els bitcoins?",
+    "enunciat": "Què es va comprar en la primera compra coneguda pagada amb bitcoins?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Un ordinador"
+      },
+      {
+        "lletra": "B",
+        "text": "Dues pizzes"
+      },
+      {
+        "lletra": "C",
+        "text": "Un cotxe"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "L’any 2010 es van pagar 10.000 bitcoins per dues pizzes. El bitcoin és una moneda digital descentralitzada i la seva quantitat màxima és limitada. El seu valor, però, pot variar moltíssim."
+  },
+  {
+    "id": 2,
+    "tema": "T’agrada el cafè?",
+    "enunciat": "Què han observat alguns estudis sobre el consum moderat de cafè?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Que pot estar associat a menys risc de deteriorament cognitiu"
+      },
+      {
+        "lletra": "B",
+        "text": "Que fa recordar absolutament tot"
+      },
+      {
+        "lletra": "C",
+        "text": "Que una tassa de cafè pot substituir una hora de son"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "El cafè no fa miracles, però alguns estudis han associat el seu consum moderat amb un risc menor de deteriorament cognitiu. La cafeïna i altres compostos del cafè poden intervenir en diferents processos del cervell."
+  },
+  {
+    "id": 3,
+    "tema": "Busca les diferències",
+    "enunciat": "Què pot fer que dos cafès fets amb els mateixos grans tinguin gustos diferents?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "La temperatura de l’aigua, el temps d’extracció i el premsatge"
+      },
+      {
+        "lletra": "B",
+        "text": "La forma de la tassa"
+      },
+      {
+        "lletra": "C",
+        "text": "L’hora del dia en què el prens"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "La química en té bona part de la culpa. La temperatura, el temps que l’aigua està en contacte amb el cafè i el grau de premsatge determinen quins compostos passen a la tassa i, per tant, el gust i l’aroma."
+  },
+  {
+    "id": 4,
+    "tema": "Consum i canvi climàtic",
+    "enunciat": "Aproximadament, quina part de les emissions mundials de gasos amb efecte d’hivernacle està relacionada amb el sistema alimentari?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Una centèsima part"
+      },
+      {
+        "lletra": "B",
+        "text": "Una desena part"
+      },
+      {
+        "lletra": "C",
+        "text": "Prop d’un terç"
+      }
+    ],
+    "correcta": "C",
+    "explicacio": "Produir, transformar, transportar i consumir aliments té un impacte important sobre el clima. Per això, què mengem, com s’ha produït i d’on ve també té conseqüències ambientals."
+  },
+  {
+    "id": 5,
+    "tema": "Una cullera amb història",
+    "enunciat": "Per què moltes llengües romàniques tenen una paraula semblant per dir cullera?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Perquè deriva d’una paraula llatina relacionada amb els caragols"
+      },
+      {
+        "lletra": "B",
+        "text": "Perquè la primera cullera coneguda es va descobrir a Catalunya"
+      },
+      {
+        "lletra": "C",
+        "text": "Perquè antigament només es feien servir per menjar líquids"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "Els caragols hi tenen molt a veure. Els romans feien servir una cullera acabada en punta per extreure’n la carn. El seu nom llatí, cochlearia, és a l’origen de paraules com cullera, cuchara, cuillère o cucchiaio."
+  },
+  {
+    "id": 6,
+    "tema": "Vi o cervesa?",
+    "enunciat": "A Europa, quina beguda té evidències arqueològiques més antigues?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "La cervesa"
+      },
+      {
+        "lletra": "B",
+        "text": "El vi"
+      },
+      {
+        "lletra": "C",
+        "text": "Van aparèixer al mateix temps"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "S’han trobat evidències de producció de vi a Geòrgia de cap al 6000 aC. A Europa, les evidències de cervesa documentades són posteriors, com les de la cova de Can Sadurní, a Begues."
+  },
+  {
+    "id": 7,
+    "tema": "Una tapeta de cucs?",
+    "enunciat": "Per què s’investiga l’ús d’insectes en alimentació?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Perquè poden ser una font alternativa de proteïnes"
+      },
+      {
+        "lletra": "B",
+        "text": "Perquè no contenen cap greix"
+      },
+      {
+        "lletra": "C",
+        "text": "Perquè tots tenen exactament el mateix gust"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "Poden aportar proteïnes, greixos, vitamines i minerals. Davant l’augment de la població mundial, la recerca estudia noves fonts de proteïna més sostenibles. A la URV fins i tot s’ha investigat la combinació de proteïna d’insecte i impressió 3D d’aliments."
+  },
+  {
+    "id": 8,
+    "tema": "Un còctel de dopamina",
+    "enunciat": "Amb què està especialment relacionada la dopamina al nostre cervell?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Amb la motivació i el sistema de recompensa"
+      },
+      {
+        "lletra": "B",
+        "text": "Només amb la digestió"
+      },
+      {
+        "lletra": "C",
+        "text": "Amb el color dels ulls"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "La dopamina és un neurotransmissor que participa en la motivació, el plaer, l’aprenentatge i altres processos. El cervell necessita que n’hi hagi una quantitat adequada i que actuï als llocs adequats."
+  },
+  {
+    "id": 9,
+    "tema": "Que t’enganyin és molt fàcil",
+    "enunciat": "Quina informació ens resulta més fàcil de creure?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "La que confirma coses que ja pensàvem"
+      },
+      {
+        "lletra": "B",
+        "text": "La que és més llarga i elaborada"
+      },
+      {
+        "lletra": "C",
+        "text": "La que conté més números i xifres"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "El nostre cervell no analitza tota la informació de manera neutral. Els biaixos, les emocions i les idees que ja tenim poden influir en allò que considerem creïble. Per això és important comprovar les fonts abans de compartir una informació."
+  },
+  {
+    "id": 10,
+    "tema": "Un mòbil sense endoll?",
+    "enunciat": "Podríem carregar algun dia el mòbil amb la llum que hi ha dins de casa?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "No, és físicament impossible"
+      },
+      {
+        "lletra": "B",
+        "text": "Sí, amb noves cèl·lules fotovoltaiques"
+      },
+      {
+        "lletra": "C",
+        "text": "Sí, però només amb l’ús de bombetes incandescents"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "Ja s’hi treballa. Nous materials com les perovskites o determinats materials orgànics poden aprofitar millor la llum d’interiors. La recerca obre la porta a sensors i petits dispositius que obtinguin energia de la llum ambiental."
+  },
+  {
+    "id": 11,
+    "tema": "Plàstics al vermut",
+    "enunciat": "Què són els microplàstics?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Plàstics de menys de 5 mil·límetres"
+      },
+      {
+        "lletra": "B",
+        "text": "Plàstics que només es poden veure amb microscopi"
+      },
+      {
+        "lletra": "C",
+        "text": "Un tipus de bacteri que viu al mar"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "Són fragments molt petits de materials plàstics. Poden provenir de la degradació de peces més grans, pneumàtics o fibres tèxtils, i arribar al medi marí i als organismes que hi viuen, com els musclos."
+  },
+  {
+    "id": 12,
+    "tema": "Refrescos amb nanotecnologia",
+    "enunciat": "Quant mesura aproximadament un nanòmetre?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Una mil·lèsima de metre"
+      },
+      {
+        "lletra": "B",
+        "text": "Una milionèsima de metre"
+      },
+      {
+        "lletra": "C",
+        "text": "Una milmilionèsima de metre"
+      }
+    ],
+    "correcta": "C",
+    "explicacio": "Un nanòmetre és una milmilionèsima part d’un metre. A aquesta escala es poden modificar les propietats dels materials. La nanotecnologia s’utilitza en medicina, electrònica, energia, cosmètica i també en alimentació, com als refrescos."
+  },
+  {
+    "id": 13,
+    "tema": "Quant costa la vida?",
+    "enunciat": "Què vol dir que hi ha inflació?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Que pugen de manera generalitzada els preus"
+      },
+      {
+        "lletra": "B",
+        "text": "Que tots els productes passen a costar el mateix"
+      },
+      {
+        "lletra": "C",
+        "text": "Que els salaris augmenten més que els preus"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "Inflació significa un augment generalitzat dels preus. Pot tenir moltes causes: energia, matèries primeres, problemes de subministrament, guerres, collites... Quan els preus pugen més que els ingressos, podem comprar menys coses amb els mateixos diners."
+  },
+  {
+    "id": 14,
+    "tema": "Salut a taula",
+    "enunciat": "Per a la salut importa només què mengem?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Sí, l’hora no té cap importància"
+      },
+      {
+        "lletra": "B",
+        "text": "No: també pot importar quan mengem"
+      },
+      {
+        "lletra": "C",
+        "text": "Només importa quant mengem"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "El nostre organisme segueix ritmes d’aproximadament 24 hores. La crononutrició estudia com els horaris dels àpats es relacionen amb aquests ritmes i amb aspectes com el metabolisme i el control del pes."
+  },
+  {
+    "id": 15,
+    "tema": "Saps fer un rentat de mans?",
+    "enunciat": "Quant de temps hauríem de dedicar a rentar-nos bé les mans amb aigua i sabó?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Uns 5 segons"
+      },
+      {
+        "lletra": "B",
+        "text": "Uns 15 segons"
+      },
+      {
+        "lletra": "C",
+        "text": "Almenys uns 40 segons"
+      }
+    ],
+    "correcta": "C",
+    "explicacio": "Rentar-se correctament les mans ajuda a tallar la transmissió de microorganismes. És una de les mesures més senzilles per prevenir moltes infeccions i reduir-ne la propagació."
+  },
+  {
+    "id": 16,
+    "tema": "Quedem per fer el vermut?",
+    "enunciat": "Tenir una bona xarxa de relacions socials pot afectar la nostra salut?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "No, només afecta l’estat d’ànim"
+      },
+      {
+        "lletra": "B",
+        "text": "Sí, es relaciona amb el benestar físic i mental"
+      },
+      {
+        "lletra": "C",
+        "text": "Només durant l’adolescència"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "Les relacions socials importen. El suport social s’associa amb més benestar psicològic, millor capacitat per afrontar situacions difícils i un millor envelliment. El que compta no és només quanta gent coneixem, sinó la qualitat d’aquestes relacions."
+  },
+  {
+    "id": 17,
+    "tema": "Les tomaques són vermelles?",
+    "enunciat": "Una tomaca és realment vermella?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Sí: el vermell és dins de la tomaca"
+      },
+      {
+        "lletra": "B",
+        "text": "No exactament: el cervell interpreta la llum que reflecteix"
+      },
+      {
+        "lletra": "C",
+        "text": "Només és vermella quan hi ha Sol"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "El color és una percepció creada pel cervell. Els objectes absorbeixen unes longituds d’ona de la llum i en reflecteixen unes altres. Els nostres ulls les detecten i el cervell les interpreta com a colors."
+  },
+  {
+    "id": 18,
+    "tema": "Virus o bacteris?",
+    "enunciat": "Contra què funcionen els antibiòtics?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Contra virus i bacteris"
+      },
+      {
+        "lletra": "B",
+        "text": "Contra els bacteris"
+      },
+      {
+        "lletra": "C",
+        "text": "Contra qualsevol infecció"
+      }
+    ],
+    "correcta": "B",
+    "explicacio": "Els antibiòtics serveixen contra infeccions bacterianes, no contra els virus. Fer-ne un ús inadequat afavoreix que alguns bacteris es tornin resistents, cosa que dificulta tractar futures infeccions."
+  },
+  {
+    "id": 19,
+    "tema": "Els vins pugen de cota",
+    "enunciat": "Per què el canvi climàtic pot fer que algunes vinyes es plantin cada vegada més amunt?",
+    "respostes": [
+      {
+        "lletra": "A",
+        "text": "Per buscar temperatures més fresques"
+      },
+      {
+        "lletra": "B",
+        "text": "Perquè a més altura sempre plou més"
+      },
+      {
+        "lletra": "C",
+        "text": "Perquè el raïm necessita menys oxigen"
+      }
+    ],
+    "correcta": "A",
+    "explicacio": "L’augment de les temperatures modifica les condicions en què madura el raïm. Una de les estratègies d’adaptació és buscar zones més fresques: més altura, latituds més septentrionals o orientacions menys exposades al sol."
+  }
+]

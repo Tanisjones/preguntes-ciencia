@@ -1,0 +1,13 @@
+{
+  "titol": "Ciència a la URV",
+  "subtitol": "Aperitius de ciència",
+  "mode_targetes": "colors",
+  "barrejar_respostes": true,
+  "segons_inactivitat": 60,
+  "segons_resposta": 20,
+  "introduccio": [
+    "La Universitat Rovira i Virgili investiga en múltiples àmbits, i tots tenen un impacte directe en la nostra vida.",
+    "Per començar a fer recerca, el més important és fer-se preguntes.",
+    "Vols trobar algunes respostes?"
+  ]
+}

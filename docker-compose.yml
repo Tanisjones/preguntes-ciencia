@@ -1,0 +1,17 @@
+services:
+  joc:
+    build: .
+    image: ciencia-urv
+    container_name: ciencia-urv
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      # Estat de la partida (persisteix entre reinicis i actualitzacions)
+      - estat:/data
+      # Preguntes i configuració editables sense reconstruir la imatge
+      - ./data/preguntes.json:/app/data/preguntes.json:ro
+      - ./config.json:/app/config.json:ro
+    restart: unless-stopped
+
+volumes:
+  estat:

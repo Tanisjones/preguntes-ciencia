@@ -1,0 +1,13 @@
+{
+  "name": "Ciència a la URV",
+  "short_name": "Ciència URV",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#5bc0eb",
+  "theme_color": "#5bc0eb",
+  "icons": [
+    { "src": "img/icona.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

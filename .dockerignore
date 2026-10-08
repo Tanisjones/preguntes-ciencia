@@ -1,0 +1,16 @@
+.venv
+.chrome-quiosc
+__pycache__
+*.pyc
+data/estat.json
+data/.estat-*
+*.docx
+urv-bandera-color.png
+.git
+data/telemetria.jsonl
+telemetria
+telemetria.sh
+dist
+raspberry
+empaqueta-raspberry.sh
+.servidor

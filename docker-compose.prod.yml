@@ -1,0 +1,38 @@
+# Producció del joc «Ciència a la URV», darrere del nginx d'entrada del servidor.
+#
+# Topologia:
+#   joc  - Flask via gunicorn (1 worker)   127.0.0.1:8092 -> :8000
+#
+# El nginx del host fa el TLS de preguntes.ddns.net i fa de proxy cap a
+# 127.0.0.1:8092. Cap servei publica un port públic.
+#
+# Engegar:   docker compose -f docker-compose.prod.yml up -d --build
+# Registres: docker compose -f docker-compose.prod.yml logs -f
+# Reiniciar la partida a mà:
+#            docker compose -f docker-compose.prod.yml exec joc rm -f /data/estat.json
+
+name: preguntes-ciencia
+
+services:
+  joc:
+    build: .
+    image: preguntes-ciencia:latest
+    restart: unless-stopped
+    # Publicat només a localhost; el nginx del host fa de proxy.
+    ports:
+      - "127.0.0.1:8092:8000"
+    volumes:
+      # Estat de la partida (persisteix entre reinicis i redesplegaments)
+      - estat:/data
+      # Editables al servidor sense reconstruir la imatge
+      - ./config.json:/app/config.json:ro
+      - ./data/preguntes.json:/app/data/preguntes.json:ro
+    # El healthcheck ve del Dockerfile (GET /api/salut)
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 128M
+
+volumes:
+  estat:

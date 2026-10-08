@@ -1,0 +1,11 @@
+.venv/
+.chrome-quiosc/
+__pycache__/
+data/estat.json
+data/.estat-*
+data/telemetria.jsonl
+telemetria/
+dist/
+.servidor
+*.docx
+.DS_Store
