@@ -54,7 +54,7 @@ docker compose up -d --build
 ## Producció: preguntes.ddns.net
 
 Al servidor de producció el joc funciona igual que els altres projectes:
-- el codi és a `~/preguntes-ciencia`;
+- el codi és a `~/preguntes-ciencia`, un clon d'aquest repositori de GitHub;
 - `docker-compose.prod.yml` el publica només a `127.0.0.1:8092`;
 - el nginx del host fa el TLS de `preguntes.ddns.net` i hi fa de proxy.
 
@@ -67,7 +67,12 @@ echo 'usuari@servidor' > .servidor   # només la primera vegada (no es puja a gi
 
 `deploy.sh` i `telemetria.sh` llegeixen el servidor de la variable `SERVIDOR` o, si no hi és, del fitxer local `.servidor`.
 
-Sincronitza els fitxers per rsync, reconstrueix la imatge i reinicia el contenidor. La partida en curs es conserva. `config.json` i `data/preguntes.json` del portàtil sobreescriuen els del servidor.
+El servidor agafa el codi de GitHub, no del portàtil:
+1. Si hi ha canvis sense commit, s'atura i demana que en facis el commit primer.
+2. Puja a GitHub els commits pendents (`git push`).
+3. Al servidor, posa `~/preguntes-ciencia` exactament en aquest commit (`git fetch` + `git reset --hard`), reconstrueix la imatge i reinicia el contenidor.
+
+La partida en curs es conserva. `config.json` i `data/preguntes.json` són els del repositori, i qualsevol canvi fet a mà al servidor es perd en el desplegament següent.
 
 **Primera vegada: vhost i HTTPS** (al servidor, demana la contrasenya de sudo):
 

@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 #
-# deploy.sh — puja el projecte al servidor i (re)desplega el contenidor.
+# deploy.sh — desplega al servidor la versió publicada a GitHub.
 #
 # S'executa des del portàtil, a l'arrel del projecte:
 #     ./deploy.sh
 #
-# Sincronitza els fitxers a $SERVIDOR:~/preguntes-ciencia, reconstrueix
-# la imatge i reinicia el contenidor. L'estat de la partida (volum Docker) es
-# conserva. Es pot tornar a executar sense problemes; s'atura al primer error.
+# Comprova que no hi hagi canvis sense fer commit, puja els commits pendents a
+# GitHub i, al servidor, posa ~/preguntes-ciencia exactament en aquest commit
+# (git fetch + reset), reconstrueix la imatge i reinicia el contenidor. L'estat
+# de la partida (volum Docker) es conserva. Es pot tornar a executar sense
+# problemes; s'atura al primer error.
 
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -18,18 +20,42 @@ if [ -z "$SERVIDOR" ]; then
     echo "Cal indicar el servidor: SERVIDOR=usuari@host $0, o desa'l a .servidor" >&2
     exit 1
 fi
+REPO="https://github.com/Tanisjones/preguntes-ciencia.git"
+BRANCA="main"
 DESTI="preguntes-ciencia"
 COMPOSE="docker compose -f docker-compose.prod.yml"
 
 echo "==> Validant les preguntes en local ..."
 python3 -c "import json; json.load(open('data/preguntes.json')); json.load(open('config.json'))"
 
-echo "==> Sincronitzant fitxers amb $SERVIDOR:~/$DESTI ..."
-rsync -az --delete \
-    --exclude '.venv/' --exclude '.chrome-quiosc/' --exclude '__pycache__/' \
-    --exclude '.DS_Store' --exclude 'data/estat.json' --exclude 'data/.estat-*' --exclude 'data/telemetria.jsonl' --exclude 'telemetria/' \
-    --exclude '*.docx' --exclude 'urv-bandera-color.png' --exclude '.git/' --exclude 'dist/' --exclude '.servidor' \
-    ./ "$SERVIDOR:$DESTI/"
+echo "==> Comprovant el repositori local ..."
+if [ "$(git rev-parse --abbrev-ref HEAD)" != "$BRANCA" ]; then
+    echo "Cal ser a la branca $BRANCA per desplegar." >&2
+    exit 1
+fi
+if [ -n "$(git status --porcelain)" ]; then
+    echo "Hi ha canvis sense commit. Fes primer:" >&2
+    echo "    git add -A && git commit -m \"...\"" >&2
+    git status --short >&2
+    exit 1
+fi
+git push -q origin "$BRANCA"
+COMMIT="$(git rev-parse HEAD)"
+echo "    Commit a desplegar: $(git log -1 --format='%h %s')"
+
+echo "==> Actualitzant el codi al servidor des de GitHub ..."
+ssh "$SERVIDOR" "set -e
+    mkdir -p ~/$DESTI
+    cd ~/$DESTI
+    if [ ! -d .git ]; then
+        echo '    (primera vegada: convertint la carpeta en un clon del repositori)'
+        git init -q -b $BRANCA
+        git remote add origin $REPO
+    fi
+    git remote set-url origin $REPO
+    git fetch -q origin $BRANCA
+    git reset -q --hard $COMMIT
+    git log -1 --format='    Servidor a: %h %s'"
 
 echo "==> Construint i (re)engegant el contenidor ..."
 ssh "$SERVIDOR" "set -e
